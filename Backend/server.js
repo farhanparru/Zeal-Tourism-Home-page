@@ -11,7 +11,7 @@ require('./Database/connection')
 
 
 // Serve static files from the "public" directory
-app.use(express.static(path.join(__dirname, '../Zeal Tourism_Home/index.html')));
+app.use('/assets', express.static(path.join(__dirname, 'Zeal Tourism_Home', 'assets')));
 
 
 // const loginlimiter = rateLimit({
@@ -20,13 +20,13 @@ app.use(express.static(path.join(__dirname, '../Zeal Tourism_Home/index.html')))
 //     message: "Too many login attempts from this IP, please try again after 15 minutes"
 // })
 
-
+    
 // example
 
 
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../Zeal Tourism_Home', 'index.html'));
+    res.sendFile(path.join(__dirname, 'Zeal Tourism_Home', 'index.html'));
 });
 
 
