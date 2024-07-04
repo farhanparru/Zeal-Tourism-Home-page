@@ -7,7 +7,8 @@ const cookieparser = require('cookie-parser')
 const rateLimit = require('express-rate-limit')
 const port = process.env.BACKEND_PORT || 5000
 require('./Database/connection')
-
+const userRouter = require('../Backend/routes/userRoute') 
+   
 
 
 // Serve static files from the "public" directory
@@ -33,6 +34,7 @@ app.use(cookieparser())
 app.use(loginlimiter)
 
 
+app.use('/api/user',userRouter)
 
 app.get('/',(req,res)=>{
     res.send('hello backend')

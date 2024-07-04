@@ -1,15 +1,13 @@
 document.getElementById('signupForm').addEventListener('submit', async (event) => {
     event.preventDefault();
   
-    const firstName = document.getElementById('firstName').value;
-    const countryCode = document.getElementById('countryCode').value;
-    const phoneNumber = document.getElementById('phoneNumber').value;
-    const password = document.getElementById('newPassword').value;
+    const firstName = document.getElementById('FirstName').value;
+    const phoneNumber = document.getElementById('PhoneNumber').value;
+    const password = document.getElementById('Password').value;
   
     try {
-      const response = await axios.post('http://localhost:5000/api/signup', {
+      const response = await axios.post('http://localhost:5000/api/user/signup', {
         firstName,
-        countryCode,
         phoneNumber,
         password
       });
