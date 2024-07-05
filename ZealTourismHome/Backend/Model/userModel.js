@@ -39,4 +39,4 @@ userSchema.pre('save', async function (next) {
 })
 
 const userDB = new mongoose.model('user', userSchema)
-module.exports =  userDB
+module.exports =  userDB    

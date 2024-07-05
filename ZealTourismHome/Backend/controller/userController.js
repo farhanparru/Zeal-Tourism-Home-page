@@ -15,23 +15,15 @@ module.exports = {
         });
       }
          
-      const findUser = await userModel.findOne({
-        $or: [{ email: email }, { PhoneNumber: PhoneNumber }],
-      });
-  
-      if (findUser) {
-        if (findUser.email === email) {
-          return res
-            .status(400)
-            .json({ message: "User with this email already exists." });
-        }
-  
-        if (findUser.PhoneNumber === PhoneNumber) {
-          return res
-            .status(400)
-            .json({ message: "Phone number already registered." });
-        }
+      
+      const findUser = await userModel.findOne({PhoneNumber})
+      if(findUser){
+        return res.status(400).json({
+          succes:false,
+          message:"User with this phoneNumber alreday exist"
+        })
       }
+         
       const newUser = new userModel({
         FirstName: FirstName,
         PhoneNumber:PhoneNumber,
@@ -46,6 +38,7 @@ module.exports = {
       })
        
     } catch (error) {
+      console.log(error);
         return res.status(500).json({
             status: 'Error',
             message:"Internal Server Error"
