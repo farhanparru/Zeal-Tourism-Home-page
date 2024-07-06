@@ -67,8 +67,10 @@
         </div>
       </div>
     </div>
-    <!--End Preloader -->
-
+    <!--API conncte -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/AuthData.js"></script>
+    <script src="./js/FBauthData.js"></script>
     <!-- header-area-->
     <header class="header-area shadow bg-white">
       <div class="col-xl-10 m-auto">
@@ -156,12 +158,15 @@
                     href="javascript:void(0);"
                     id="LogIn"
                   >
-                    <span class="user-pic"
-                      ><img src="assets/img/No_user.png"
-                    /></span>
-                    Login
-                  </a>
-                  <!--
+                  <span class="user-pic" id="user-pic"><img src="assets/img/No_user.png" /></span>
+                  <span id="user-name">Name</span>
+                 <span id="login-logout-text">Login</span> 
+                  <!--Logout -->
+                  <!-- index.html
+
+         
+
+    
                           <a class="nav-link dropdown-toggle" href="javascript:void(0);" id="userpic" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="user-pic"><img src="assets/img/user-profiles.jpg"></span> Ronald Richards <i class="fa-solid fa-angle-down"></i></a>
                         <div class="dropdown-menu" aria-labelledby="userpic">
                             <a class="dropdown-item" href="Profile.html">My account</a>
@@ -4952,16 +4957,16 @@
           </div>
           <div class="modal-body pt-0">
             <div class="d-flex justify-content-between">
-              <button type="button" class="btn Facebooklog_Btn">
+              <a href="/auth/facebook"><button type="button" class="btn Facebooklog_Btn">
                 <img
                   class="pr-1"
                   src="assets/img/Icons/Facebook_Logo.svg"
                 />Login with Facebook
-              </button>
-              <button type="button" class="btn Google_Btn">
-                <img class="pr-1" src="assets/img/Icons/Google_Logo.svg" />
+              </button></a>
+              <a href="/auth/google"><button type="button" class="btn Google_Btn">
+               <img class="pr-1" src="assets/img/Icons/Google_Logo.svg" />
                 Login with Google
-              </button>
+              </button></a>
             </div>
           </div>
         </div>
@@ -5034,9 +5039,7 @@
           <div class="modal-body pb-0 text-center">
             <p>
               Already have an account?
-              <strong class="them-color curser-pointer" id="LogInAlready"
-                >Login</strong
-              >
+              <strong class="them-color curser-pointer" id="LogInAlready">Login</strong>
             </p>
           </div>
           <div class="modal-body pt-0 text-center">
@@ -5047,22 +5050,21 @@
           </div>
           <div class="modal-body pt-0">
             <div class="d-flex justify-content-between">
-              <button type="button" class="btn Facebooklog_Btn">
-                <img
-                  class="pr-1"
-                  src="assets/img/Icons/Facebook_Logo.svg"
-                />Login with Facebook
-              </button>
-              <a href="/auth/google"><button type="button" class="btn Google_Btn">
-                <img class="pr-1" src="assets/img/Icons/Google_Logo.svg" />
-                Login with Google
-              </button></a> 
+             <a href="/auth/facebook"><button type="button" class="btn Facebooklog_Btn">
+                <img class="pr-1" src="assets/img/Icons/Facebook_Logo.svg" />Login with Facebook
+              </button></a>
+
+              <a href="/auth/google"><button type="button" class="btn Google_Btn" id="googleLoginBtn">
+                <img class="pr-1" src="assets/img/Icons/Google_Logo.svg" />Login with Google
+              </button></a>
             </div>
           </div>
         </div>
       </div>
-    </div>
-
+    
+      <div id="content"></div>
+    
+      <script src="script.js"></script>
     <!--Forget Password Popup area-->
     <div
       class="modal GlobelCustomPopup"

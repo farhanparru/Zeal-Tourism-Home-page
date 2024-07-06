@@ -2,7 +2,6 @@ const passport = require('passport')
 const OAuth25trategy = require('passport-google-oauth2').Strategy
 const GoogleDb = require('../../Model/googleModel')
 const express = require('express')
-const app = express()
 require('dotenv').config()
 
  const googleClientID = process.env.GOOGLE_CLIENT_ID
@@ -17,15 +16,18 @@ passport.use(new OAuth25trategy({
     passReqToCallback   : true
   },
   async(request,accessToken, refreshToken, profile, done)=>{
+  
+   
       try {
         let user = await GoogleDb.findOne({googleId:profile.id})
         if(!user){
             user = new GoogleDb({
                 googleId:profile.id,
                 displayName:profile.displayName,
-                email:profile.email[0].value,
+                email:profile.emails[0].value,
                 image:profile.photos[0].value
             })
+         
 
             await user.save()
         }
@@ -43,11 +45,5 @@ passport.use(new OAuth25trategy({
     done(null,user)
  })
 
- app.get('/login/sucess',async(req,res)=>{
-    if(req.user){
-        res.status(200).json({message:"user Login", user:req.user})
-    }else{
-        res.status(400).json({message:"Not Authorized"})
-    }
- })
+   
 
