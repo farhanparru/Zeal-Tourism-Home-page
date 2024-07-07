@@ -92,6 +92,8 @@ app.get('/Home', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+
+
 app.get('/failure',(req,res)=>{
     res.sendFile(path.join(__dirname, 'public', 'Error.html'));
 })

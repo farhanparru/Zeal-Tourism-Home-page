@@ -18,11 +18,13 @@ passport.use(new FaceBookstrategy({
             
        try {
          let user =  await facebookDb.findOne({facebookId:profile.id})   
+         console.log(user);
          if(!user){
             user = new facebookDb({
-                facebookId:profile.id,
+             
                 displayName:profile.displayName,
                 email:profile.emails[0].value,
+                facebookId:profile.id,
                 image:profile.photos[0].value,
                 token:profile.accessToken
             })

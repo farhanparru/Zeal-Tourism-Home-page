@@ -158,9 +158,12 @@
                     href="javascript:void(0);"
                     id="LogIn"
                   >
-                  <span class="user-pic" id="user-pic"><img src="assets/img/No_user.png" /></span>
+                  <span class="user-pic" id="user-pic">
+                    <img src="assets/img/No_user.png" alt="User Picture" />
+                  </span>
                   <span id="user-name">Name</span>
-                 <span id="login-logout-text">Login</span> 
+                  <span id="login-logout-text">Login</span>
+                  
                   <!--Logout -->
                   <!-- index.html
 
@@ -4818,13 +4821,13 @@
             <div class="form-group">
               <div class="floating position-relative">
                 <input
-                  type="text"
+                  type="email"
                   class="form-control input-rounded floating"
-                  id="usr"
-                  required=""
-                  value="ronaldrichards@gmail.com"
+                  id="email"
+                  value="email"
+                 
                 />
-                <label for="usr">First Name</label>
+                <label for="usr">E-mail</label>
               </div>
             </div>
 
@@ -4870,7 +4873,7 @@
                   class="form-control floating"
                   id="Password"
                   required=""
-                  value="12356865854847"
+              
                 />
                 <span
                   class="visble_pass_eye toggle-password"
@@ -4892,6 +4895,7 @@
                     >Remember Me</label
                   >
                 </div>
+                
                 <a
                   href="javascript:void(0);"
                   id="forgetPass"
@@ -4910,6 +4914,7 @@
                 >
                   Send OTP
                 </button>
+
               </div>
               <div class="floating position-relative">
                 <input
@@ -4983,8 +4988,7 @@
       aria-hidden="true"
     >
 
-    
-    <!--Signup page-->
+   
     <!-- Signup page -->
 <div class="modal-dialog modal-dialog-centered" role="document">
   <div class="modal-content">
@@ -5061,60 +5065,35 @@
           </div>
         </div>
       </div>
+    </div>
     
-      <div id="content"></div>
-    
-      <script src="script.js"></script>
+      
     <!--Forget Password Popup area-->
-    <div
-      class="modal GlobelCustomPopup"
-      id="ForgetPasswordarea"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
+    <div class="modal  GlobelCustomPopup " id="ForgetPasswordarea" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Forgot Password</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true"><i class="fal fa-xmark"></i></span>
             </button>
           </div>
           <div class="modal-body pb-2">
             <p>Please enter email id registered with us</p>
             <div class="form-group">
-              <div class="floating position-relative">
-                <input
-                  type="text"
-                  class="form-control input-rounded floating invalid"
-                  id="usr"
-                  required=""
-                  value="ronaldrichards@gmail.com"
-                />
-                <label for="usr">Your Email Address</label>
+              <div class="floating position-relative ">
+                <input type="text" class="form-control input-rounded floating invalid" id="usr" required="">
+                 <label for="usr">Your Email Address</label>
               </div>
-              <span class="invalidmessage">Invalid email address</span>
-            </div>
-          </div>
+               <span class="invalidmessage">Invalid email address</span>
+             </div>
+         </div>
           <div class="modal-footer pb-0">
-            <button
-              type="button"
-              class="btn btn-block btn-primary"
-              data-dismiss="modal"
-            >
-              Submit
-            </button>
+            <button type="button" class="btn btn-block btn-primary" data-dismiss="modal" >Submit</button>
           </div>
-          <div class="modal-body pb-0 text-center">
-            <p class="curser-pointer" id="LogInAlready">Back to login</p>
-          </div>
+           <div class="modal-body pb-0 text-center">
+               <p  class="curser-pointer" id="LogInAlready">Back to login</p>
+           </div>
         </div>
       </div>
     </div>

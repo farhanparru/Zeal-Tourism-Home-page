@@ -1,6 +1,6 @@
 const userModel = require("../Model/userModel");
 const JoiValidation = require("../Model/JoiValidation");
-const jwt = require("jsonwebtoken");
+
 
 module.exports = {
   userSignup: async (req, res) => {
@@ -45,4 +45,9 @@ module.exports = {
         })
     }
   },
+
+
+ //  user ResetPassword link using a nodemailer
+
+   
 };
