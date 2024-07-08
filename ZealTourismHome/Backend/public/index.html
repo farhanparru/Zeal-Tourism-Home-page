@@ -4999,18 +4999,26 @@
       </button>
     </div>
     <div class="modal-body pb-2">
+
       <form id="signupForm">
         <div class="form-group">
           <div class="floating position-relative">
             <input type="text" class="form-control input-rounded floating" id="FirstName" name="FirstName" placeholder="First Name" />
-            <label for="usr">First Name</label>
+            <label for="FirstName">First Name</label>
           </div>
         </div>
-
+      
+        <div class="form-group">
+          <div class="floating position-relative">
+            <input type="email" class="form-control input-rounded floating" id="Mail" name="email" placeholder="E-mail" />
+            <label for="email">E-mail</label>
+          </div>
+        </div>
+      
         <div class="form-group">
           <div class="input-group">
             <div class="input-group-prepend">
-             <select class="form-control" id="CountryCode" name="CountryCode">
+              <select class="form-control" id="CountryCode" name="CountryCode">
                 <option>+971</option>
                 <option>+91</option>
                 <option>+945</option>
@@ -5021,18 +5029,18 @@
             <input type="tel" class="form-control" id="PhoneNumber" name="PhoneNumber" placeholder="Phone Number" />
           </div>
         </div>
-
+      
         <div class="form-group">
           <div class="floating position-relative">
             <input type="password" class="form-control floating" id="password" name="password" placeholder="Password" />
-            <span class="visble_pass_eye toggle-password" data-target="NewPassword"><i class="fal fa-eye-slash"></i></span>
-            <label for="NewPassword">Password</label>
+            <span class="visble_pass_eye toggle-password" data-target="password"><i class="fal fa-eye-slash"></i></span>
+            <label for="password">Password</label>
           </div>
         </div>
         <div class="modal-footer pb-0">
           <button type="submit" class="btn btn-block btn-primary" id="Registrationbtn">REGISTER</button>
         </div>
-      </form>
+      </form>      
       <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
       <script src="/js/signup.js"></script>
    
@@ -5069,34 +5077,38 @@
     
       
     <!--Forget Password Popup area-->
-    <div class="modal  GlobelCustomPopup " id="ForgetPasswordarea" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Forgot Password</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true"><i class="fal fa-xmark"></i></span>
-            </button>
-          </div>
-          <div class="modal-body pb-2">
-            <p>Please enter email id registered with us</p>
-            <div class="form-group">
-              <div class="floating position-relative ">
-                <input type="text" class="form-control input-rounded floating invalid" id="usr" required="">
-                 <label for="usr">Your Email Address</label>
-              </div>
-               <span class="invalidmessage">Invalid email address</span>
-             </div>
-         </div>
-          <div class="modal-footer pb-0">
-            <button type="button" class="btn btn-block btn-primary" data-dismiss="modal" >Submit</button>
-          </div>
-           <div class="modal-body pb-0 text-center">
-               <p  class="curser-pointer" id="LogInAlready">Back to login</p>
-           </div>
+      <!-- Forgot Password Modal -->
+      <div class="modal GlobelCustomPopup" id="ForgetPasswordarea" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Forgot Password</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fal fa-xmark"></i></span>
+                    </button>
+                </div>
+                <div class="modal-body pb-2">
+                    <p>Please enter the email address registered with us</p>
+                    <div class="form-group">
+                        <div class="floating position-relative">
+                            <input type="email" class="form-control input-rounded floating" id="new" name="email" placeholder="E-mail" />
+                            <label for="email">E-mail</label>
+                        </div>
+                        <span class="invalidmessage" style="display: none; color: red;">Invalid email address</span>
+                    </div>
+                </div>
+                <div class="modal-footer pb-0">
+                    <button type="button" class="btn btn-block btn-primary" id="submitEmailBtn">Submit</button>
+                </div>
+                <div class="modal-body pb-0 text-center">
+                    <p class="cursor-pointer" id="LogInAlready">Back to login</p>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/resetPassword.js"></script>
+    
 
     <!--Password Updated! popup-->
     <div

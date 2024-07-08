@@ -37,6 +37,7 @@ app.use(passport.initialize());
 app.use(express.json())
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(cookieparser())
+app.use(bodyParser.json());  
 // app.use(loginlimiter)
 app.use(cors())
 
@@ -45,7 +46,12 @@ app.use(cors())
 // Serve static files from the "public" directory
 app.use('/assets', express.static(path.join(__dirname, 'public', 'assets')));
 app.use('/js', express.static(path.join(__dirname, 'public', 'js')));
-  
+
+// Serve reset password HTML page
+app.get('/resetpassword/:userId/:token', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'resetpassword.html'));
+});
+
        
 // initial google authtication
 app.get('/auth/google',passport.authenticate('google',{scope:['profile','email']}))
