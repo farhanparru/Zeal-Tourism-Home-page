@@ -1,5 +1,5 @@
-document.getElementById('email').addEventListener('input', (event) => {
-  console.log("Email input value:", event.target.value);
+document.getElementById('current').addEventListener('input', (event) => {
+ 
 });
 
 document.getElementById('signupForm').addEventListener('submit', async (event) => {
@@ -7,10 +7,10 @@ document.getElementById('signupForm').addEventListener('submit', async (event) =
 
   const FirstName = document.getElementById('FirstName').value;
   const countryCode = document.getElementById('CountryCode').value;
-  const email = document.getElementById('Mail').value;
+  const email = document.getElementById('current').value;
   const PhoneNumber = document.getElementById('PhoneNumber').value;
-  const password = document.getElementById('password').value;
-
+  const password = document.getElementById('hide').value;
+console.log(password,"KKK");
 
 
   try {

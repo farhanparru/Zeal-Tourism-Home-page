@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', async (e) => {
         document.getElementById('user-name').innerText = data.user.displayName;
       } else {
         console.error(data.message);
-      }
+      }          
     } catch (error) {
-      console.error('Error fetching user data:', error);
+      // console.error('Error fetching user data:', error);
     }
   });
   

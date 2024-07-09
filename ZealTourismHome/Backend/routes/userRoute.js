@@ -8,5 +8,8 @@ router
 .post('/forgotpassword',userCtrl.Resetpasswordlink)
 .get('/resetpassword/:userId/:token',userCtrl.ResetTokenTime)
 .post('/changepassword/:id/:token', userCtrl.changePassword)
+.post('/login', userCtrl.userLogin)
+.post('/loginotp', userCtrl.loginOtp)
+.post('/verifyOpt', userCtrl.Otpverify)
 
 module.exports = router

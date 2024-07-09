@@ -156,13 +156,14 @@
                   <a
                     class="nav-link dropdown-toggle"
                     href="javascript:void(0);"
-                    id="LogIn"
+                   
                   >
                   <span class="user-pic" id="user-pic">
                     <img src="assets/img/No_user.png" alt="User Picture" />
                   </span>
                   <span id="user-name">Name</span>
-                  <span id="login-logout-text">Login</span>
+              
+
                   
                   <!--Logout -->
                   <!-- index.html
@@ -179,6 +180,7 @@
                         </div>
                         -->
                 </li>
+                <button id="LogIn" >Logout</button>
                 <!-- <li class="nav-item">
                         <a href="Cart.html" class="nav-link"><i class="fal fa-cart-shopping fa-lg"></i></a>
                      </li> -->
@@ -4794,158 +4796,91 @@
     </a>
 
     <!--Log In Popup area-->
-    <div
-      class="modal GlobelCustomPopup"
-      id="LogInarea"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
+
+    <div class="modal GlobelCustomPopup" id="LogInarea" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">
-              Login to Zeal Tourism
-            </h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
+            <h5 class="modal-title" id="exampleModalLabel">Login to Zeal Tourism</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true"><i class="fal fa-xmark"></i></span>
             </button>
           </div>
           <div class="modal-body pb-2">
-            <div class="form-group">
-              <div class="floating position-relative">
-                <input
-                  type="email"
-                  class="form-control input-rounded floating"
-                  id="email"
-                  value="email"
-                 
-                />
-                <label for="usr">E-mail</label>
-              </div>
-            </div>
-
-            <div class="form-group mb-1">
-              <div class="row">
-                <div class="col-3">
-                  <h6>Login With</h6>
+            <form id="Loginform">
+              <div class="form-group">
+                <div class="floating position-relative">
+                  <input type="email" class="form-control input-rounded floating" id="Mail" placeholder="email"  />
+                  <label for="Mail">E-mail</label>
                 </div>
-                <div class="col">
-                  <div class="d-flex justify-content-start" id="UserlogType">
-                    <div class="custom-control custom-radio">
-                      <input
-                        type="radio"
-                        id="PasswordTry"
-                        name="customRadio"
-                        class="custom-control-input"
-                        checked
-                      />
-                      <label class="custom-control-label" for="PasswordTry"
-                        >Password</label
-                      >
-                    </div>
-                    <div class="custom-control custom-radio ml-3">
-                      <input
-                        type="radio"
-                        id="OtpTry"
-                        name="customRadio"
-                        class="custom-control-input"
-                      />
-                      <label class="custom-control-label" for="OtpTry"
-                        >OTP</label
-                      >
+              </div>
+  
+              <div class="form-group mb-1">
+                <div class="row">
+                  <div class="col-3">
+                    <h6>Login With</h6>
+                  </div>
+                  <div class="col">
+                    <div class="d-flex justify-content-start" id="UserlogType">
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="PasswordTry" name="customRadio" class="custom-control-input" checked />
+                        <label class="custom-control-label" for="PasswordTry">Password</label>
+                      </div>
+                      <div class="custom-control custom-radio ml-3">
+                        <input type="radio" id="OtpTry" name="customRadio" class="custom-control-input" />
+                        <label class="custom-control-label" for="OtpTry">OTP</label>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+  
+              <div class="form-group" id="EnterPasswordArea">
+                <div class="floating position-relative">
 
-            <div class="form-group" id="EnterPasswordArea">
-              <div class="floating position-relative">
-                <input
-                  type="password"
-                  class="form-control floating"
-                  id="Password"
-                  required=""
-              
-                />
-                <span
-                  class="visble_pass_eye toggle-password"
-                  data-target="Password"
-                  ><i class="fal fa-eye-slash"></i
-                ></span>
-                <label for="Password">Password</label>
-              </div>
+                 <input type="password" class="form-control floating" id="password" name="password" placeholder="Password" />
+                  <span class="visble_pass_eye toggle-password" data-target="Password"><i class="fal fa-eye-slash"></i></span>
 
-              <div class="d-flex justify-content-between mt-1">
-                <div class="custom-control custom-checkbox">
-                  <input
-                    type="checkbox"
-                    class="custom-control-input"
-                    id="customCheck"
-                    name="example1"
-                  />
-                  <label class="custom-control-label" for="customCheck"
-                    >Remember Me</label
-                  >
+                  <label for="Password">Password</label>
                 </div>
-                
-                <a
-                  href="javascript:void(0);"
-                  id="forgetPass"
-                  class="text-blue-primary"
-                  >Forgot Password</a
-                >
+  
+                <div class="d-flex justify-content-between mt-1">
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck" name="example1" />
+                    <label class="custom-control-label" for="customCheck">Remember Me</label>
+                  </div>
+                  
+                  <a href="javascript:void(0);" id="forgetPass" class="text-blue-primary">Forgot Password</a>
+                </div>
               </div>
-            </div>
-
-            <div class="form-group position-relative d-none" id="EnterOtpArea">
-              <div class="sendOtpBtn">
-                <button
-                  type="button"
-                  id=""
-                  class="ml-0 btn btn-block btn-default info-ouline py-1"
-                >
-                  Send OTP
-                </button>
-
+  
+              <div class="form-group position-relative d-none" id="EnterOtpArea">
+                <div class="sendOtpBtn">
+                  <button type="button" id="sendOtpBtn"class="ml-0 btn btn-block btn-default info-ouline py-1">Send OTP</button>
+                </div>
+                <div class="floating position-relative">
+                  <input type="text" class="form-control floating" id="Otp"  name="otp" />
+                  <label for="Otp">Enter OTP</label>
+                </div>
+  
+                <div class="d-flex justify-content-between mt-1">
+                  <p>Your request for OTP will be sent to <strong id="emailDisplay"></strong> and registered mobile number.</p>
+                </div>
+                <div id="otpMessage" style="color: red; display: none;"></div> <!-- Add this line -->
               </div>
-              <div class="floating position-relative">
-                <input
-                  type="text"
-                  class="form-control floating"
-                  id="Otp"
-                  required=""
-                  value=""
-                />
-                <label for="Otp">Entyer OTP</label>
+    
+              
+              <div class="modal-footer pb-0">
+                <button type="submit" class="btn btn-block btn-primary" id="loginbtn">LOGIN</button>
               </div>
-
-              <div class="d-flex justify-content-between mt-1">
-                <p>
-                  Your request for OTP will be sent to
-                  <strong>ronaldrichards@gmail.com</strong> and registered
-                  mobile number.
-                </p>
-              </div>
-            </div>
+              <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+              <script src="/js/login.js"></script>
+              <script src="/js/Otpauth.js"></script>
+            </form>
           </div>
-          <div class="modal-footer pb-0">
-            <button
-              type="button"
-              class="btn btn-block btn-primary"
-              id=""
-              data-dismiss="modal"
-            >
-              LOGIN
-            </button>
-          </div>
+
+         <!--Ending login page-->
+
           <div class="modal-body pb-0 text-center">
             <p>
               Don't have an account?
@@ -4962,6 +4897,7 @@
           </div>
           <div class="modal-body pt-0">
             <div class="d-flex justify-content-between">
+             
               <a href="/auth/facebook"><button type="button" class="btn Facebooklog_Btn">
                 <img
                   class="pr-1"
@@ -4971,7 +4907,10 @@
               <a href="/auth/google"><button type="button" class="btn Google_Btn">
                <img class="pr-1" src="assets/img/Icons/Google_Logo.svg" />
                 Login with Google
-              </button></a>
+              </button>
+              
+            </a>
+          
             </div>
           </div>
         </div>
@@ -5010,7 +4949,7 @@
       
         <div class="form-group">
           <div class="floating position-relative">
-            <input type="email" class="form-control input-rounded floating" id="Mail" name="email" placeholder="E-mail" />
+            <input type="email" class="form-control input-rounded floating" id="current" name="email" placeholder="E-mail" />
             <label for="email">E-mail</label>
           </div>
         </div>
@@ -5032,7 +4971,7 @@
       
         <div class="form-group">
           <div class="floating position-relative">
-            <input type="password" class="form-control floating" id="password" name="password" placeholder="Password" />
+            <input type="password" class="form-control floating" id="hide" name="password" placeholder="Password" />
             <span class="visble_pass_eye toggle-password" data-target="password"><i class="fal fa-eye-slash"></i></span>
             <label for="password">Password</label>
           </div>

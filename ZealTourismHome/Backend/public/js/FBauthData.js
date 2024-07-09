@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', async (e) => {
     try {
       const response = await axios.get('http://localhost:5000/login/facebook/success');
       const data = response.data;
-      console.log(data);  // Log the data for debugging
+    
     
      
       if (response.status === 200) {
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', async (e) => {
         console.error(data.message);
       }
     } catch (error) {
-      console.error('Error fetching user data:', error);
+      // console.error('Error fetching user data:', error);
     }
   });
   

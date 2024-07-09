@@ -41,8 +41,9 @@ app.use(bodyParser.json());
 // app.use(loginlimiter)
 app.use(cors())
 
+app.set('view engine', 'ejs');
 
-
+app.use(express.static(path.join(__dirname, 'public')));
 // Serve static files from the "public" directory
 app.use('/assets', express.static(path.join(__dirname, 'public', 'assets')));
 app.use('/js', express.static(path.join(__dirname, 'public', 'js')));
@@ -52,6 +53,9 @@ app.get('/resetpassword/:userId/:token', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'resetpassword.html'));
 });
 
+app.get('/loginsuccespage',(req,res)=>{
+    res.sendFile(path.join(__dirname, 'public', 'success.html'));
+})
        
 // initial google authtication
 app.get('/auth/google',passport.authenticate('google',{scope:['profile','email']}))
@@ -104,6 +108,13 @@ app.get('/failure',(req,res)=>{
     res.sendFile(path.join(__dirname, 'public', 'Error.html'));
 })
 
+app.get('/logout', (req, res) => {
+    req.logout(); // This clears the authenticated session
+
+    // Redirect to a login page or home page after logout
+    res.redirect('/Home'); // Adjust this URL based on your application's routes
+});
+;
 
 
 // Router Level Midlware
