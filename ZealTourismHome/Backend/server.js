@@ -68,7 +68,10 @@ app.get( '/auth/google/callback',
 // login withGoogle success API
 app.get('/login/google/success', (req, res) => {
     if (req.user) {
-        res.status(200).json({ message: "User Login", user: req.user });
+        res.status(200).json({ message: 
+        "User Login", user: req.user ,
+        accessToken: req.user.accessToken
+    });
     } else {
         res.status(400).json({ message: "Not Authorized" });
     }
@@ -85,16 +88,18 @@ app.get('/login/google/success', (req, res) => {
 
 
   // login withfacebook success API
-app.get('/login/facebook/success', (req, res) => {
+  app.get('/login/facebook/success', (req, res) => {
     if (req.user) {
-        res.status(200).json({ message: "User Login", user: req.user });
+      res.status(200).json({
+        message: "User Login",
+        user: req.user,
+        accessToken: req.user.accessToken
+      });
     } else {
-        res.status(400).json({ message: "Not Authorized" });
+      res.status(400).json({ message: "Not Authorized" });
     }
-  });    
+  });
   
-     
-   
 
    
     

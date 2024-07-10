@@ -5,7 +5,8 @@ const facebookSchema  = new mongoose.Schema({
     displayName:String,
     token:String,
     email:String,
-    image:String
+    image:String,
+   accessToken: String 
 })
 
 module.exports = mongoose.model('facebook',facebookSchema)

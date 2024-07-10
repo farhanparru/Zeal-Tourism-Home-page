@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const response = await axios.post('http://localhost:5000/api/user/login', { password, email });
   
         if (response.status === 200) {
+          console.log(response.data);
           alert('Login successful');
           document.getElementById('Loginform').reset();
           localStorage.setItem('token', response.data.token);

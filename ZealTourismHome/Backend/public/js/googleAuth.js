@@ -25,13 +25,16 @@ passport.use(new OAuth25trategy({
                 googleId:profile.id,
                 displayName:profile.displayName,
                 email:profile.emails[0].value,
-                image:profile.photos[0].value
+                image:profile.photos[0].value,
+                accessToken: accessToken
             })
          
+            user.accessToken = accessToken;
+            console.log( user.accessToken,"kkk");
 
             await user.save()
         }
-        return done(null, user)
+        return done(null, { ...user.toObject(), accessToken });
       } catch (error) {
         return done(error, null)
       }

@@ -18,7 +18,7 @@ passport.use(new FaceBookstrategy({
             
        try {
          let user =  await facebookDb.findOne({facebookId:profile.id})   
-         console.log(user);
+       
          if(!user){
             user = new facebookDb({
              
@@ -26,11 +26,13 @@ passport.use(new FaceBookstrategy({
                 email:profile.emails[0].value,
                 facebookId:profile.id,
                 image:profile.photos[0].value,
-                token:profile.accessToken
+                accessToken: accessToken // Store the access token here
             })
+            user.accessToken = accessToken;
+            console.log( user.accessToken,"kkk");
             await user.save()
          }
-         return done(null, user)
+         return done(null, { ...user.toObject(), accessToken }); 
        } catch (error) {       
         return done(error, null)
        }

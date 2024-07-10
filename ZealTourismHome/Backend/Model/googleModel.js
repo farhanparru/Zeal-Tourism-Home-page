@@ -6,6 +6,7 @@ const googleSchema =  new mongoose.Schema(
         displayName:String,
         email:String,
         image:String,
+        accessToken: String 
     },{timestamps:true})
 
 const GoogleuserData = new mongoose.model('Google',googleSchema)
